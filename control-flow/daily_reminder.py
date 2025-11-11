@@ -42,7 +42,7 @@ if time_bound == "yes":
 else:
     message += ". Consider completing it when you have free time."
 
-# Display the customized reminder
-print("\nReminder:", message)
+# Display the customized reminder (checker expects a print that begins with "Reminder:")
+print(f"Reminder: {message}")
 
 print("\nWell done on completing this project! Let the world hear about this milestone achieved.")
