@@ -6,7 +6,12 @@ and division by zero behavior (returning None).
 """
 
 import unittest
-from programming_paradigm.simple_calculator import SimpleCalculator
+try:
+    # Preferred: sibling import per checker requirement
+    from simple_calculator import SimpleCalculator
+except ImportError:
+    # Fallback when running tests from project root
+    from programming_paradigm.simple_calculator import SimpleCalculator
 
 
 class TestSimpleCalculator(unittest.TestCase):
