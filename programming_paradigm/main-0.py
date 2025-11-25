@@ -1,8 +1,20 @@
+"""Command-line interface for the BankAccount class.
+
+Usage:
+    python main-0.py <command>:<amount>
+
+Commands:
+    - deposit:<amount>
+    - withdraw:<amount>
+    - display
+"""
+
 import sys
 from bank_account import BankAccount
 
 
 def main():
+    """Parse CLI arguments and perform the requested banking operation."""
     account = BankAccount(100)
     if len(sys.argv) < 2:
         print("Usage: python main.py <command>:<amount>")
@@ -28,4 +40,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
