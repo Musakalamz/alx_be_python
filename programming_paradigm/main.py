@@ -1,24 +1,32 @@
-"""Robust division calculator command-line interface.
+"""Library management demo script using Book and Library classes.
 
-This script consumes two arguments (numerator and denominator), delegates to
-`safe_divide` for error handling, and prints a user-friendly result.
+Demonstrates object instantiation and method invocation for a small collection,
+printing the available books as the system state changes.
 """
 
-import sys
-from robust_division_calculator import safe_divide
+from library_management import Book, Library
 
 
 def main():
-    """Entry point for the robust division CLI."""
-    if len(sys.argv) != 3:
-        print("Usage: python main.py <numerator> <denominator>")
-        sys.exit(1)
+    """Set up library, perform check-out/return operations, and list results."""
+    # Setup a small library
+    library = Library()
+    library.add_book(Book("Brave New World", "Aldous Huxley"))
+    library.add_book(Book("1984", "George Orwell"))
 
-    numerator = sys.argv[1]
-    denominator = sys.argv[2]
+    # Initial list of available books
+    print("Available books after setup:")
+    library.list_available_books()
 
-    result = safe_divide(numerator, denominator)
-    print(result)
+    # Simulate checking out a book
+    library.check_out_book("1984")
+    print("\nAvailable books after checking out '1984':")
+    library.list_available_books()
+
+    # Simulate returning a book
+    library.return_book("1984")
+    print("\nAvailable books after returning '1984':")
+    library.list_available_books()
 
 
 if __name__ == "__main__":
