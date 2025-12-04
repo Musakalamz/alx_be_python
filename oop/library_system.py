@@ -19,6 +19,10 @@ class Book:
         self.title = title
         self.author = author
 
+    def __str__(self):
+        """Human-friendly summary for base books."""
+        return f"Book: {self.title} by {self.author}"
+
 
 class EBook(Book):
     """Digital book with a file size attribute (in KB)."""
@@ -27,6 +31,12 @@ class EBook(Book):
         super().__init__(title, author)
         self.file_size = int(file_size)
 
+    def __str__(self):
+        """Human-friendly summary for digital books."""
+        return (
+            f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
+        )
+
 
 class PrintBook(Book):
     """Printed book with a page count attribute."""
@@ -34,6 +44,12 @@ class PrintBook(Book):
     def __init__(self, title: str, author: str, page_count: int):
         super().__init__(title, author)
         self.page_count = int(page_count)
+
+    def __str__(self):
+        """Human-friendly summary for printed books."""
+        return (
+            f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
+        )
 
 
 class Library:
@@ -50,14 +66,4 @@ class Library:
     def list_books(self):
         """Print a description line for every book in the collection."""
         for book in self.books:
-            if isinstance(book, EBook):
-                print(
-                    f"EBook: {book.title} by {book.author}, File Size: {book.file_size}KB"
-                )
-            elif isinstance(book, PrintBook):
-                print(
-                    f"PrintBook: {book.title} by {book.author}, Page Count: {book.page_count}"
-                )
-            else:
-                print(f"Book: {book.title} by {book.author}")
-
+            print(str(book))
