@@ -44,7 +44,7 @@ By completing this project, you will be able to:
 alx_be_python/
 └── programming_paradigm/
     ├── bank_account.py
-    ├── main-1.py 
+    ├── main-0.py 
     ├── main-1.py
     ├── robust_division_calculator.py
     ├── main.py
