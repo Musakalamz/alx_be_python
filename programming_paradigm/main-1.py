@@ -18,7 +18,7 @@ def main():
     # sys.argv[1] -> numerator
     # sys.argv[2] -> denominator
     if len(sys.argv) != 3:
-        print("Usage: python main.py <numerator> <denominator>")
+        print("Usage: python main-1.py <numerator> <denominator>")
         sys.exit(1)  # Exit with non-zero status to indicate incorrect usage
 
     # Retrieve numerator and denominator from command-line arguments
